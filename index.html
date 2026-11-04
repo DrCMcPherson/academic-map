@@ -1,0 +1,610 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><meta name="schedule-published" content="2026-11-04T20:04:46.597Z"><title>27–28 Academic Map</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"><style>body{margin:0}/* Layout: a whiteboard grid of cohort rows by weekday, with a checks column beside it. */
+:root{
+--bg:#eef1f0;--board:#fff;--ink:#17201d;--ink2:#4c5a55;--ink3:#6f7c77;--line:#d3dad7;--line2:#aeb9b5;--accent:#1c5bb8;--on-accent:#fff;--hover:#e6ebe9;
+--danger:#b3261e;--danger-bg:#fbe4e1;--warn:#8a5a00;--warn-bg:#fbf0d0;--ok:#22703f;--ok-bg:#dff1e4;--hatch:#dfe4e2;
+--red-bg:#f6d3cf;--red-fg:#6c1a13;--orange-bg:#fbdcb9;--orange-fg:#663604;--blue-bg:#c6e6f0;--blue-fg:#0b4557;--purple-bg:#ded3ee;--purple-fg:#3c2869;--green-bg:#dbe8b9;--green-fg:#384a0e;--teal-bg:#c9ebdf;--teal-fg:#0a4839;--pink-bg:#f7d3e3;--pink-fg:#691a41;--gray-bg:#e2e6e4;--gray-fg:#303a36;
+--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121716;--board:#1a2120;--ink:#e8eeec;--ink2:#b0bdb8;--ink3:#8d9a95;--line:#2f3936;--line2:#4a5753;--accent:#7fb0f5;--on-accent:#0d1a2c;--hover:#262f2d;--danger:#ff9c92;--danger-bg:#46191a;--warn:#f0c463;--warn-bg:#3b2e0c;--ok:#83d6a0;--ok-bg:#163523;--hatch:#262e2c;--red-bg:#4f201c;--red-fg:#fbd5d0;--orange-bg:#4d3210;--orange-fg:#fbdcb4;--blue-bg:#123f4d;--blue-fg:#c6ecf7;--purple-bg:#352a55;--purple-fg:#e0d6f5;--green-bg:#333f14;--green-fg:#dfeebb;--teal-bg:#123f33;--teal-fg:#c6efe1;--pink-bg:#4e1e35;--pink-fg:#f9d4e5;--gray-bg:#2e3735;--gray-fg:#dbe2df;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121716;--board:#1a2120;--ink:#e8eeec;--ink2:#b0bdb8;--ink3:#8d9a95;--line:#2f3936;--line2:#4a5753;--accent:#7fb0f5;--on-accent:#0d1a2c;--hover:#262f2d;--danger:#ff9c92;--danger-bg:#46191a;--warn:#f0c463;--warn-bg:#3b2e0c;--ok:#83d6a0;--ok-bg:#163523;--hatch:#262e2c;--red-bg:#4f201c;--red-fg:#fbd5d0;--orange-bg:#4d3210;--orange-fg:#fbdcb4;--blue-bg:#123f4d;--blue-fg:#c6ecf7;--purple-bg:#352a55;--purple-fg:#e0d6f5;--green-bg:#333f14;--green-fg:#dfeebb;--teal-bg:#123f33;--teal-fg:#c6efe1;--pink-bg:#4e1e35;--pink-fg:#f9d4e5;--gray-bg:#2e3735;--gray-fg:#dbe2df;color-scheme:dark}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:14px/1.4 var(--body);padding-block:12px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font:600 22px/1.15 var(--display);margin:0;text-wrap:balance}
+h2{font:600 15px/1.2 var(--display);margin:0}
+button,select,input,textarea{font:inherit;color:inherit}
+button{background:var(--board);border:1px solid var(--line2);border-radius:6px;padding:5px 10px;cursor:pointer;min-height:32px}
+button:hover{background:var(--hover)}
+button:disabled{opacity:.45;cursor:default}
+button.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:600}
+button.danger{color:var(--danger);border-color:var(--danger)}
+button.link{border:0;background:none;padding:0;min-height:0;color:var(--accent);text-align:left;text-decoration:underline;text-underline-offset:2px}
+select,input,textarea{background:var(--board);border:1px solid var(--line2);border-radius:6px;padding:5px 8px;min-height:32px;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--ink2);min-width:0}
+label>input,label>select,label>textarea{width:100%;color:var(--ink);font-size:14px}
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:10px}
+.top .sub{color:var(--ink2);font-size:13px}
+.grow{flex:1 1 auto}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.seg{display:inline-flex;border:1px solid var(--line2);border-radius:6px;overflow:hidden}
+.seg button{border:0;border-radius:0;border-right:1px solid var(--line2);background:var(--board)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--board);font-weight:600}
+.inline{flex-direction:row;align-items:center;gap:6px;font-size:13px}
+.inline select{width:auto;max-width:190px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-bottom:10px;font-size:12px;color:var(--ink2)}
+.legend span.k{display:inline-flex;align-items:center;gap:5px}
+.sw{width:13px;height:13px;border-radius:3px;display:inline-block;border:1px solid var(--line2)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:12px;align-items:start}
+.layout.solo{grid-template-columns:minmax(0,1fr)}
+@media (max-width:1050px){.layout{grid-template-columns:minmax(0,1fr)}}
+.scroll{overflow-x:auto;background:var(--board);border:1px solid var(--line);border-radius:8px}
+.board{display:grid;min-width:780px}
+.ch{font:600 13px var(--display);padding:7px 8px;border-bottom:1px solid var(--line2);border-left:1px solid var(--line);position:sticky;top:0}
+.ch:first-child{border-left:0}
+.rh{padding:9px 8px;border-top:1px solid var(--line);font:600 13px/1.2 var(--display)}
+.rh small{display:block;font:400 12px var(--body);color:var(--ink2);margin-top:2px}
+.cell{border-top:1px solid var(--line);border-left:1px solid var(--line);padding:5px;display:flex;flex-direction:column;gap:5px;min-height:92px;min-width:0}
+.cell.parking{background:repeating-linear-gradient(135deg,transparent 0 8px,var(--hatch) 8px 9px)}
+.cell.over{background:var(--hover);box-shadow:inset 0 0 0 2px var(--accent)}
+.card{border-radius:5px;padding:5px 7px;font-size:12px;line-height:1.3;cursor:pointer;border:1.5px solid transparent;text-align:left;min-width:0;overflow-wrap:anywhere}
+.card[draggable="true"]{cursor:grab}
+.card:hover{filter:brightness(.97)}
+.card.clash{border:2px solid var(--danger)}
+.card.check{border:2px dashed var(--warn)}
+.card.hl{box-shadow:0 0 0 3px var(--accent)}
+.card .l1{display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.code{font:600 12.5px var(--mono);letter-spacing:-.02em}
+.cr{font:400 11px var(--mono)}
+.ttl{font-weight:500}
+.mt{font-variant-numeric:tabular-nums}
+.who{font-weight:600}
+.alert{font-weight:700}
+.side{display:flex;flex-direction:column;gap:10px;min-width:0}
+.panel{background:var(--board);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.panel h2{margin-bottom:7px;display:flex;justify-content:space-between;gap:8px}
+.count{font:600 12px var(--mono);border-radius:9px;padding:0 7px}
+.count.clash{background:var(--danger-bg);color:var(--danger)}.count.check{background:var(--warn-bg);color:var(--warn)}.count.good{background:var(--ok-bg);color:var(--ok)}
+.iss{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:12.5px}
+.iss button{all:unset;cursor:pointer;display:block;line-height:1.35}
+.iss button:hover{text-decoration:underline}
+.iss button:focus-visible{outline:2px solid var(--accent)}
+.iss .clash{color:var(--danger)}
+.muted{color:var(--ink2);font-size:12.5px}
+.load{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;font-size:12.5px;align-items:center}
+.load .n{font:500 12.5px var(--mono);font-variant-numeric:tabular-nums}
+.load .off{color:var(--danger)}.load .on{color:var(--ok)}
+.notice{background:var(--warn-bg);color:var(--warn);border-radius:6px;padding:7px 10px;margin-bottom:10px;font-size:13px}
+.empty{background:var(--board);border:1px dashed var(--line2);border-radius:8px;padding:32px 20px;text-align:center}
+.empty h2{font-size:18px;margin-bottom:6px}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:var(--board);border-left:1px solid var(--line2);box-shadow:-6px 0 22px rgba(0,0,0,.14);overflow-y:auto;z-index:20;padding:14px max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) 16px;display:flex;flex-direction:column;gap:11px}
+.drawer header{display:flex;justify-content:space-between;align-items:start;gap:10px}
+.drawer h2{font-size:18px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dates{display:flex;flex-wrap:wrap;gap:4px}
+.dates span{font:12px var(--mono);background:var(--hover);border-radius:4px;padding:1px 5px}
+.q{background:var(--warn-bg);color:var(--warn);border-radius:6px;padding:7px 9px;font-size:12.5px;display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+.raw{font:12px var(--mono);color:var(--ink2);overflow-wrap:anywhere}
+.err{color:var(--danger);font-size:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.insrow{border-top:1px solid var(--line);padding-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cal{display:grid;min-width:780px}
+.wk{padding:6px 8px;border-top:1px solid var(--line);font:12px var(--mono);color:var(--ink2)}
+.dc{border-top:1px solid var(--line);border-left:1px solid var(--line);padding:4px;min-height:46px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.dc .d{font:11px var(--mono);color:var(--ink3)}
+.dc.off{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--hatch) 6px 7px)}
+.dc.out{background:var(--bg)}
+.chip{all:unset;cursor:pointer;border-radius:4px;padding:1px 5px;font:500 11.5px var(--mono);overflow-wrap:anywhere}
+.chip:focus-visible{outline:2px solid var(--accent)}
+.tbl{width:100%;border-collapse:collapse;min-width:640px;font-size:13px}
+.tbl th,.tbl td{padding:8px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{font:600 13px var(--display);border-top:0}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--board);padding:8px 14px;border-radius:7px;z-index:40;max-width:calc(100% - 32px);font-size:13px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media (max-width:640px){h1{font-size:19px}.inline select{max-width:150px}}
+</style></head><body><main id="app"></main><aside id="drawer" class="drawer" aria-label="Details" hidden></aside><div id="toast" class="toast" role="status" hidden></div><script>window.__STATIC__={"schedule":{"cohorts":[{"id":"y3","label":"3rd years","size":20},{"id":"y2","label":"2nd years","size":20},{"id":"y1","label":"1st years","size":20}],"instructors":[{"color":"red","id":"natalie","kind":"named","name":"Natalie Starling","short":"Starling"},{"color":"green","id":"kate","kind":"named","name":"Kate Grottke","short":"Grottke"},{"color":"purple","id":"libby","kind":"named","name":"Libby Rhoades","short":"Rhoades"},{"color":"blue","id":"casey","kind":"named","name":"Casey McPherson","short":"McPherson"},{"color":"orange","id":"pt","kind":"placeholder","name":"Part-time, not named yet","short":"Part-time"},{"color":"orange","id":"imw2hbjro","kind":"named","name":"Alison Pigeon","short":"Pigeon"},{"color":"orange","id":"imw2hc9mb","kind":"named","name":"Eric Elias","short":"Elias"},{"color":"orange","id":"imw2hcjs7","kind":"named","name":"Kellan McKenna","short":"McKenna"},{"color":"orange","id":"imw2hd3dh","kind":"named","name":"Bahar Musa","short":"Musa"}],"sections":[{"cap":6,"code":"MHS 752","cohort":"y3","credits":3,"dates":[],"day":null,"end":null,"format":"","half":null,"id":"b4","instructor":"kate","note":"","pattern":"unset","sec":"01","sem":"fall","start":null,"title":"Internship"},{"cap":6,"code":"MHS 752","cohort":"y3","credits":3,"dates":[],"day":null,"end":null,"format":"","half":null,"id":"c4","instructor":"kate","note":"","pattern":"unset","sec":"02","sem":"fall","start":null,"title":"Internship"},{"cap":6,"code":"MHS 752","cohort":"y3","credits":3,"dates":[],"day":null,"end":null,"format":"","half":null,"id":"d4","instructor":"kate","note":"","pattern":"unset","sec":"03","sem":"fall","start":null,"title":"Internship"},{"cap":6,"code":"MHS 752","cohort":"y3","credits":3,"dates":[],"day":null,"end":null,"format":"","half":null,"id":"e4","instructor":"imw2hc9mb","note":"","pattern":"unset","sec":"03","sem":"fall","start":null,"title":"Internship"},{"cap":12,"code":"MHS 755","cohort":"y3","credits":1,"dates":[],"day":"Mon","end":"18:30","format":"Online sync","half":null,"id":"b5","instructor":"imw2hbjro","note":"","pattern":"weekly","sec":"01","sem":"fall","start":"17:00","title":"Prof SP Sem"},{"cap":12,"code":"MHS 755","cohort":"y3","credits":1,"dates":[],"day":"Mon","end":"18:30","format":"Online sync","half":null,"id":"c5","instructor":"pt","note":"","pattern":"weekly","sec":"02","sem":"fall","start":"17:00","title":"Prof SP Sem"},{"cap":12,"code":"MHS 753","cohort":"y3","credits":3,"dates":[],"day":"Mon","end":"21:10","format":"Online sync","half":null,"id":"b6","instructor":"casey","note":"","pattern":"weekly","sec":"01","sem":"fall","start":"18:40","title":"Int"},{"cap":12,"code":"MHS 753","cohort":"y3","credits":3,"dates":[],"day":"Mon","end":"21:10","format":"Online sync","half":null,"id":"b7","instructor":"kate","note":"","pattern":"weekly","sec":"02","sem":"fall","start":"18:40","title":"Int"},{"cap":6,"code":"MHS 752","cohort":"y3","credits":3,"dates":[],"day":null,"end":null,"format":"","half":null,"id":"g4","instructor":"kate","note":"","pattern":"unset","sec":"01","sem":"spring","start":null,"title":"Internship"},{"cap":6,"code":"MHS 752","cohort":"y3","credits":3,"dates":[],"day":null,"end":null,"format":"","half":null,"id":"h4","instructor":"kate","note":"","pattern":"unset","sec":"02","sem":"spring","start":null,"title":"Internship"},{"cap":6,"code":"MHS 752","cohort":"y3","credits":3,"dates":[],"day":null,"end":null,"format":"","half":null,"id":"i4","instructor":"kate","note":"","pattern":"unset","sec":"03","sem":"spring","start":null,"title":"Internship"},{"cap":6,"code":"MHS 752","cohort":"y3","credits":3,"dates":[],"day":null,"end":null,"format":"","half":null,"id":"j4","instructor":"imw2hc9mb","note":"","pattern":"unset","sec":"04","sem":"spring","start":null,"title":"Internship"},{"cap":12,"code":"MHS 755","cohort":"y3","credits":1,"dates":[],"day":"Mon","end":"18:30","format":"Online sync","half":null,"id":"g5","instructor":"pt","note":"","pattern":"weekly","sec":"01","sem":"spring","start":"17:00","title":"Prof SP Sem"},{"cap":12,"code":"MHS 755","cohort":"y3","credits":1,"dates":[],"day":"Mon","end":"18:30","format":"Online sync","half":null,"id":"h5","instructor":"pt","note":"","pattern":"unset","sec":"02","sem":"spring","start":"17:00","title":"Prof SP Sem"},{"cap":null,"code":"MHS 753","cohort":"y3","credits":3,"dates":[],"day":"Mon","end":"21:10","format":"Online Sync","half":null,"id":"g6","instructor":"casey","note":"","pattern":"weekly","sec":"01","sem":"spring","start":"18:40","title":"Sem"},{"cap":null,"code":"MHS 753","cohort":"y3","credits":3,"dates":[],"day":"Mon","end":"21:10","format":"Online Sync","half":null,"id":"g7","instructor":"kate","note":"","pattern":"weekly","sec":"02","sem":"spring","start":"18:40","title":"Sem"},{"cap":12,"code":"MHS 754","cohort":"y2","credits":1,"dates":[],"day":"Mon","end":"18:30","format":"Online sync","half":null,"id":"b10","instructor":"pt","note":"","pattern":"weekly","sec":"01","sem":"fall","start":"17:00","title":"Prof SP Sem"},{"cap":12,"code":"MHS 754","cohort":"y2","credits":1,"dates":[],"day":"Mon","end":"18:30","format":"Online sync","half":null,"id":"b11","instructor":"imw2hd3dh","note":"","pattern":"weekly","sec":"02","sem":"fall","start":"17:00","title":"Prof SP Sem"},{"cap":null,"code":"MHS 734","cohort":"y2","credits":4,"dates":[],"day":"Thu","end":"20:30","format":"Hybrid","half":null,"id":"c10","instructor":"imw2hcjs7","note":"","pattern":"weekly","sec":"01","sem":"fall","start":"17:00","title":"DBDM 4"},{"cap":null,"code":"MHS 734","cohort":"y2","credits":4,"dates":[],"day":"Tue","end":"21:40","format":"Sync On Ground","half":null,"id":"d10","instructor":"imw2hcjs7","note":"","pattern":"weekly","sec":"02","sem":"fall","start":"17:00","title":"DBDM 4"},{"cap":null,"code":"MHS 796","cohort":"y2","credits":4,"dates":[],"day":"Tue","end":"21:40","format":"Sync Onground","half":null,"id":"c11","instructor":"libby","note":"","pattern":"weekly","sec":"01","sem":"fall","start":"17:00","title":"Psych Int 2"},{"cap":12,"code":"MHS 796","cohort":"y2","credits":4,"dates":[],"day":"Thu","end":"21:40","format":"","half":null,"id":"d11","instructor":"imw2hc9mb","note":"","pattern":"weekly","sec":"02","sem":"fall","start":"17:00","title":"Psych Int 2"},{"cap":null,"code":"MHS 792","cohort":"y2","credits":3,"dates":[],"day":"Wed","end":"19:30","format":"Hybrid","half":null,"id":"e10","instructor":"natalie","note":"","pattern":"B","sec":"","sem":"fall","start":"17:00","title":"Adv Res Meth"},{"cap":null,"code":"CSP 764","cohort":"y2","credits":3,"dates":[],"day":"Wed","end":"19:30","format":"","half":null,"id":"e11","instructor":"natalie","note":"","pattern":"A","sec":"","sem":"fall","start":"17:00","title":"Beh Int"},{"cap":12,"code":"MHS 754","cohort":"y2","credits":1,"dates":[],"day":"Mon","end":"18:30","format":"Online sync","half":null,"id":"g10","instructor":"pt","note":"","pattern":"weekly","sec":"01","sem":"spring","start":"17:00","title":"Prof SP Sem"},{"cap":12,"code":"MHS 754","cohort":"y2","credits":1,"dates":[],"day":"Mon","end":"18:30","format":"Online sync","half":null,"id":"g11","instructor":"pt","note":"","pattern":"weekly","sec":"02","sem":"spring","start":"17:00","title":"Prof SP Sem"},{"cap":12,"code":"MHS 784","cohort":"y2","credits":3,"dates":[],"day":null,"end":null,"format":"Online Async","half":null,"id":"h10","instructor":"natalie","note":"","pattern":"unset","sec":"01","sem":"spring","start":null,"title":"Adv Beh Int"},{"cap":12,"code":"MHS 784","cohort":"y2","credits":3,"dates":[],"day":null,"end":null,"format":"Online Async","half":null,"id":"h11","instructor":"pt","note":"","pattern":"B","sec":"02","sem":"spring","start":null,"title":"Adv Beh Int"},{"cap":12,"code":"MHS 797","cohort":"y2","credits":4,"dates":[],"day":"Tue","end":"21:40","format":"","half":null,"id":"h12","instructor":"libby","note":"","pattern":"B","sec":"01","sem":"spring","start":"17:00","title":"Psych Int 3"},{"cap":12,"code":"MHS 797","cohort":"y2","credits":4,"dates":[],"day":"Tue","end":"21:40","format":"","half":null,"id":"h13","instructor":"libby","note":"","pattern":"A","sec":"02","sem":"spring","start":"17:00","title":"Psych Int 3"},{"cap":null,"code":"MHS 778","cohort":"y2","credits":3,"dates":["2028-01-19","2028-01-26","2028-02-09","2028-03-01","2028-03-15","2028-04-05","2028-04-19"],"day":"Wed","end":"19:30","format":"Hybrid","half":null,"id":"j10","instructor":"natalie","note":"","pattern":"custom","sec":"","sem":"spring","start":"17:00","title":"Intro to Cons"},{"cap":12,"code":"MHS 735","cohort":"y2","credits":4,"dates":[],"day":"Thu","end":"20:30","format":"Hybrid","half":null,"id":"j11","instructor":"imw2hc9mb","note":"","pattern":"weekly","sec":"01","sem":"spring","start":"17:00","title":"DBDM 5"},{"cap":12,"code":"MHS 735","cohort":"y2","credits":4,"dates":[],"day":"Thu","end":"20:30","format":"Hybrid","half":null,"id":"j12","instructor":"imw2hcjs7","note":"","pattern":"weekly","sec":"02","sem":"spring","start":"17:00","title":"DBDM 5"},{"cap":12,"code":"MHS 654","cohort":"y1","credits":1,"dates":[],"day":"Mon","end":"20:10","format":"Online sync","half":null,"id":"b17","instructor":"imw2hbjro","note":"","pattern":"weekly","sec":"01","sem":"fall","start":"18:40","title":"Prof SP Sem"},{"cap":12,"code":"MHS 654","cohort":"y1","credits":1,"dates":[],"day":"Mon","end":"20:10","format":"Online sync","half":null,"id":"b18","instructor":"imw2hd3dh","note":"","pattern":"weekly","sec":"02","sem":"fall","start":"18:40","title":"Prof SP Sem"},{"cap":null,"code":"MHS 530","cohort":"y1","credits":3,"dates":[],"day":"Thu","end":"19:30","format":"Hybrid","half":null,"id":"c17","instructor":"natalie","note":"","pattern":"A","sec":"01","sem":"fall","start":"17:00","title":"DBDM 1"},{"cap":null,"code":"MHS 530","cohort":"y1","credits":3,"dates":[],"day":"Thu","end":"19:30","format":"","half":null,"id":"d17","instructor":"natalie","note":"","pattern":"B","sec":"02","sem":"fall","start":"17:00","title":"DBDM 1"},{"cap":null,"code":"MHS 579","cohort":"y1","credits":3,"dates":[],"day":"Wed","end":"19:30","format":"Hybrid","half":null,"id":"c18","instructor":"libby","note":"","pattern":"A","sec":"01","sem":"fall","start":"17:00","title":"Psych of Div"},{"cap":null,"code":"MHS 579","cohort":"y1","credits":3,"dates":[],"day":"Wed","end":"19:30","format":"Hybrid","half":null,"id":"d18","instructor":"libby","note":"","pattern":"B","sec":"02","sem":"fall","start":"17:00","title":"Psych of Div"},{"cap":null,"code":"MHS 520","cohort":"y1","credits":3,"dates":[],"day":"Tue","end":"19:30","format":"Hybrid","half":null,"id":"e17","instructor":"casey","note":"","pattern":"weekly","sec":"","sem":"fall","start":"17:00","title":"Prof SP"},{"cap":null,"code":"MHS 558","cohort":"y1","credits":3,"dates":[],"day":null,"end":"19:30","format":"Online Async","half":null,"id":"e18","instructor":"pt","note":"","pattern":"unset","sec":"","sem":"fall","start":"17:00","title":"Child & Ado Dev"},{"cap":12,"code":"MHS 654","cohort":"y1","credits":1,"dates":[],"day":"Mon","end":"20:10","format":"Online sync","half":null,"id":"g17","instructor":"pt","note":"","pattern":"unset","sec":"01","sem":"spring","start":"18:40","title":"Prof SP Sem"},{"cap":12,"code":"MHS 654","cohort":"y1","credits":1,"dates":[],"day":"Mon","end":"20:10","format":"Online sync","half":null,"id":"g18","instructor":"pt","note":"","pattern":"unset","sec":"02","sem":"spring","start":"18:40","title":"Prof SP Sem"},{"cap":null,"code":"MHS 533","cohort":"y1","credits":3,"dates":[],"day":"Tue","end":"20:30","format":"Hybrid","half":null,"id":"h17","instructor":"natalie","note":"","pattern":"weekly","sec":"01","sem":"spring","start":"18:00","title":"DBDM 2"},{"cap":null,"code":"MHS 533","cohort":"y1","credits":3,"dates":[],"day":"Thu","end":"20:30","format":"Hybrid","half":null,"id":"i18","instructor":"natalie","note":"","pattern":"weekly","sec":"02","sem":"spring","start":"18:00","title":"DBDM 2"},{"cap":null,"code":"MHS 589","cohort":"y1","credits":3,"dates":[],"day":"Wed","end":"19:30","format":"","half":null,"id":"i17","instructor":"pt","note":"","pattern":"A","sec":"01","sem":"spring","start":"17:00","title":"Psych Int 1"},{"cap":null,"code":"MHS 589","cohort":"y1","credits":3,"dates":[],"day":"Wed","end":"19:30","format":"","half":null,"id":"h18","instructor":"pt","note":"","pattern":"B","sec":"02","sem":"spring","start":"17:00","title":"Psych Int 1"},{"cap":null,"code":"MHS 510","cohort":"y1","credits":3,"dates":[],"day":null,"end":null,"format":"Online Async","half":null,"id":"j17","instructor":"pt","note":"","pattern":"unset","sec":"","sem":"spring","start":null,"title":"Schools as Sys"},{"cap":null,"code":"MHS 538","cohort":"y1","credits":3,"dates":[],"day":null,"end":null,"format":"Online Async","half":null,"id":"j18","instructor":"casey","note":"","pattern":"unset","sec":"","sem":"spring","start":null,"title":"Dev. Psychopathology"}],"semesters":{"fall":{"end":"2027-12-12","label":"Fall 2027","noClass":["2027-09-06","2027-11-24","2027-11-25","2027-11-26","2027-11-27","2027-11-28"],"start":"2027-08-24"},"spring":{"end":"2028-05-14","label":"Spring 2028","noClass":["2028-02-18","2028-02-19","2028-02-20","2028-02-21","2028-03-13","2028-03-14","2028-03-15","2028-03-16","2028-03-17","2028-03-18","2028-03-19","2028-04-14","2028-04-15","2028-04-16"],"start":"2028-01-19"}}},"publishedAt":"2026-11-04T20:04:46.597Z"};</script><script>/* Schedule logic: meeting dates, conflicts, loads. Pure functions, no DOM. */
+const DOW = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+const iso = d => d.toISOString().slice(0, 10);
+const parseD = s => new Date(s + 'T00:00:00Z');
+const addDays = (d, n) => new Date(d.getTime() + n * 864e5);
+
+/* A/B labels alternate per weekday by meeting, counted from the semester's first
+   calendar week. A skipped no-class date doesn't advance the alternation; a weekday
+   that falls before the first class day in week one uses up the A slot. */
+function weekdayDates(sem, day) {
+  const start = parseD(sem.start), end = parseD(sem.end), off = new Set(sem.noClass || []);
+  const monday = addDays(start, -((start.getUTCDay() + 6) % 7));
+  let d = addDays(monday, (DOW[day] + 6) % 7), idx = 0;
+  const out = [];
+  for (; d <= end; d = addDays(d, 7)) {
+    const s = iso(d);
+    if (off.has(s)) continue;
+    if (d >= start) out.push({ date: s, wk: idx % 2 === 0 ? 'A' : 'B' });
+    idx++;
+  }
+  return out;
+}
+
+/* Returns the array of ISO dates a section meets, or null if not yet known. */
+function meetingDates(sec, sem) {
+  if (sec.pattern === 'custom') return sec.dates && sec.dates.length ? sec.dates.slice().sort() : null;
+  if (!sec.day) return null;
+  const all = weekdayDates(sem, sec.day);
+  switch (sec.pattern) {
+    case 'weekly': return all.map(x => x.date);
+    case 'A': case 'B': return all.filter(x => x.wk === sec.pattern).map(x => x.date);
+    case 'eight':
+      const mid = Math.ceil(all.length / 2);
+      if (sec.half === 'first') return all.slice(0, mid).map(x => x.date);
+      if (sec.half === 'second') return all.slice(mid).map(x => x.date);
+      return null;
+    default: return null;
+  }
+}
+
+const mins = t => { if (!t) return null; const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+
+/* 'clash' = certain overlap; 'check' = could overlap, details missing; null = clear. */
+function overlap(a, b, semesters) {
+  if (a.sem !== b.sem) return null;
+  const sem = semesters[a.sem];
+  const da = meetingDates(a, sem), db = meetingDates(b, sem);
+  const sa = mins(a.start), ea = mins(a.end), sb = mins(b.start), eb = mins(b.end);
+  const timesKnown = sa != null && ea != null && sb != null && eb != null;
+  const timesHit = timesKnown && sa < eb && sb < ea;
+  if (timesKnown && !timesHit) return null;
+  if (da && db) {
+    const set = new Set(da);
+    if (!db.some(x => set.has(x))) return null;
+    return timesKnown ? 'clash' : 'check';
+  }
+  // Dates aren't fully known: fall back to the day/time rule.
+  const dayOf = x => (x.pattern === 'custom' ? null : x.day);
+  const dayA = dayOf(a), dayB = dayOf(b);
+  if (!dayA && a.pattern !== 'custom') return null;
+  if (!dayB && b.pattern !== 'custom') return null;
+  if (dayA && dayB && dayA !== dayB) return null;
+  if (!timesKnown) return 'check';
+  // A pending 8-week split or an async course may not really collide, so ask rather than assert.
+  const soft = x => x.pattern === 'eight' || x.pattern === 'custom' || /async/i.test(x.format || '');
+  return soft(a) || soft(b) ? 'check' : 'clash';
+}
+
+const label = s => s.code.replace('MHS ', '') + (s.sec ? '-' + s.sec : '');
+const fullLabel = s => s.code + (s.sec ? '-' + s.sec : '');
+
+function analyze(state, semKey) {
+  const secs = state.sections.filter(s => s.sem === semKey);
+  const issues = [];
+  const add = (level, kind, text, ids) => issues.push({ level, kind, text, ids });
+  const byId = Object.fromEntries(state.instructors.map(i => [i.id, i]));
+
+  // Instructors. Placeholder rows stand for several people, so they aren't compared.
+  for (let i = 0; i < secs.length; i++) for (let j = i + 1; j < secs.length; j++) {
+    const a = secs[i], b = secs[j];
+    if (a.instructor !== b.instructor) continue;
+    const ins = byId[a.instructor];
+    if (!ins || ins.kind === 'placeholder') continue;
+    const o = overlap(a, b, state.semesters);
+    if (o) add(o, 'Instructor', `${ins.short}: ${fullLabel(a)} and ${fullLabel(b)} ${o === 'clash' ? 'overlap' : 'may overlap; a time or date is missing'}`, [a.id, b.id]);
+  }
+
+  // Cohorts. A student takes one section of each course, so ask whether a working path exists.
+  for (const co of state.cohorts) {
+    const cs = secs.filter(s => s.cohort === co.id);
+    const courses = {};
+    cs.forEach(s => (courses[s.code] = courses[s.code] || []).push(s));
+    const codes = Object.keys(courses);
+    const hit = new Map();
+    const ov = (a, b) => { const k = a.id < b.id ? a.id + b.id : b.id + a.id; if (!hit.has(k)) hit.set(k, overlap(a, b, state.semesters)); return hit.get(k); };
+    const reachable = new Set(); let paths = 0;
+    (function walk(i, chosen) {
+      if (paths > 20000) return;
+      if (i === codes.length) { paths++; chosen.forEach(s => reachable.add(s.id)); return; }
+      for (const s of courses[codes[i]]) if (!chosen.some(c => ov(c, s) === 'clash')) walk(i + 1, chosen.concat(s));
+    })(0, []);
+    for (let i = 0; i < codes.length; i++) for (let j = i + 1; j < codes.length; j++) {
+      const A = courses[codes[i]], B = courses[codes[j]];
+      const res = A.flatMap(a => B.map(b => ov(a, b)));
+      const ids = [...A, ...B].map(s => s.id);
+      if (res.every(r => r === 'clash')) add('clash', 'Cohort', `${co.label}: every section of ${codes[i]} overlaps every section of ${codes[j]}`, ids);
+      else if (res.every(r => r)) add('check', 'Cohort', `${co.label}: ${codes[i]} and ${codes[j]} may overlap for everyone; a time or date is missing`, ids);
+    }
+    if (codes.length && paths > 0) cs.filter(s => !reachable.has(s.id)).forEach(s => add('clash', 'Cohort', `${co.label}: a student in ${fullLabel(s)} can't fit one section of every other course`, [s.id]));
+    for (const code of codes) {
+      const caps = courses[code].map(s => s.cap);
+      if (caps.every(c => c != null)) {
+        const total = caps.reduce((x, y) => x + y, 0);
+        if (total < co.size) add('check', 'Capacity', `${code}: ${total} seats for ${co.size} ${co.label}`, courses[code].map(s => s.id));
+      }
+    }
+  }
+
+  // Loads
+  const loads = state.instructors.map(ins => {
+    const mine = secs.filter(s => s.instructor === ins.id);
+    return { ins, credits: mine.reduce((t, s) => t + (s.credits || 0), 0), missing: mine.filter(s => s.credits == null).length, sections: mine };
+  });
+  for (const l of loads) if (l.ins.target != null && l.credits !== l.ins.target) {
+    const d = l.credits - l.ins.target;
+    add('load', 'Load', `${l.ins.short}: ${l.credits} of ${l.ins.target} credits (${d > 0 ? d + ' over' : -d + ' under'})`, l.sections.map(s => s.id));
+  }
+  return { issues, loads };
+}
+
+(async function(){
+const $=s=>document.querySelector(s), root=$('#app'), drawerEl=$('#drawer'), toastEl=$('#toast');
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clientId='c'+Math.random().toString(36).slice(2);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fmtD=s=>{const[,m,d]=s.split('-').map(Number);return MON[m-1]+' '+d};
+const fmtStamp=s=>{if(!s)return'';const d=new Date(s);return d.toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})};
+const fmtT=t=>{if(!t)return'';let[h,m]=t.split(':').map(Number);const p=h>=12?'pm':'am';h=h%12||12;return h+':'+String(m).padStart(2,'0')+' '+p};
+const fmtRange=s=>s.start&&s.end?fmtT(s.start).replace(/ (am|pm)$/,'')+'–'+fmtT(s.end):'Time not set';
+const patText=s=>({weekly:'Weekly',A:'A week',B:'B week',custom:(s.dates||[]).length+' set dates',unset:'Dates not set',eight:s.half==='first'?'First half':s.half==='second'?'Second half':'8 weeks, half not set'}[s.pattern]||'Dates not set');
+const DAYS=['Mon','Tue','Wed','Thu','Fri','Sat'];
+const DAYNAME={Mon:'Monday',Tue:'Tuesday',Wed:'Wednesday',Thu:'Thursday',Fri:'Friday',Sat:'Saturday'};
+const COLORS=['red','orange','blue','purple','green','teal','pink','gray'];
+
+let db=null,user=null,downloads=null,canEdit=false;
+let mode='view',plans={},planId=null,state=null,published=null,publishedMeta=null,dbError=null,loaded=false,slow=false;
+let undo=[],redo=[],saveTimer=null,saving=false,saveAgain=false,dirty=false,saveStatus='';
+const ui={sem:'fall',view:'board',colorBy:'instructor',fi:'',fc:'',ff:'',drawer:null,sel:null,hl:[],confirm:null};
+try{const v=store.get('colorBy');if(v)ui.colorBy=v}catch(e){}
+
+function toast(m){toastEl.textContent=m;toastEl.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>toastEl.hidden=true,3200)}
+const data=()=>mode==='edit'?state:published;
+const editing=()=>mode==='edit';
+
+/* Faculty get the schedule only: no workbook notes, source cells, or load targets. */
+function forFaculty(st){const c=JSON.parse(JSON.stringify(st));delete c.name;
+  c.sections.forEach(s=>{delete s.flags;delete s.raw;delete s.source});
+  c.instructors.forEach(i=>{delete i.target});return c}
+
+function commit(fn,opts){opts=opts||{};undo.push(JSON.stringify(state));if(undo.length>60)undo.shift();redo=[];fn(state);markDirty();renderMain();if(opts.drawer)renderDrawer()}
+function markDirty(){dirty=true;saveStatus='Saving…';clearTimeout(saveTimer);saveTimer=setTimeout(flush,800);renderStatus()}
+async function flush(){
+  if(saving){saveAgain=true;return}
+  saving=true;saveAgain=false;
+  const body={state:JSON.parse(JSON.stringify(state)),updatedAt:new Date().toISOString(),updatedBy:clientId};
+  try{await db.doc('drafts/'+planId).set(body);plans[planId]=body;saveStatus='Saved';dirty=false}
+  catch(e){saveStatus='Not saved';toast(e&&e.code==='invalid_argument'?"You don't have edit access to this schedule.":"Couldn't save. Your changes stay on this screen; try again shortly.")}
+  saving=false;if(saveAgain){dirty=true;flush()}renderStatus();
+}
+function step(from,to){if(!from.length)return;to.push(JSON.stringify(state));state=JSON.parse(from.pop());markDirty();renderMain();renderDrawer()}
+document.addEventListener('keydown',e=>{
+  const typing=/INPUT|TEXTAREA|SELECT/.test(e.target.tagName);
+  if(e.key==='Escape'&&ui.drawer){closeDrawer();return}
+  if(!editing()||typing||!(e.ctrlKey||e.metaKey)||e.key.toLowerCase()!=='z')return;
+  e.preventDefault();e.shiftKey?step(redo,undo):step(undo,redo);
+});
+
+function insOf(st,id){return st.instructors.find(i=>i.id===id)||{id,name:'Unassigned',short:'Unassigned',color:'gray',kind:'placeholder'}}
+function colorOf(st,s){
+  if(ui.colorBy==='cohort')return{y3:'purple',y2:'teal',y1:'pink'}[s.cohort]||'gray';
+  if(ui.colorBy==='format'){const f=s.format||'';return /or/.test(f)?'orange':/Hybrid/.test(f)?'teal':/sync/.test(f)?'blue':'gray'}
+  return insOf(st,s.instructor).color||'gray'}
+const paint=c=>`background:var(--${c}-bg);color:var(--${c}-fg)`;
+function visible(st){return st.sections.filter(s=>s.sem===ui.sem&&(!ui.fi||s.instructor===ui.fi)&&(!ui.fc||s.cohort===ui.fc)&&(!ui.ff||(s.format||'Not listed')===ui.ff))}
+
+function renderMain(){
+  const st=data();
+  if(!loaded&&!dbError&&db){root.innerHTML=`<div class="empty"><h2>Loading the schedule</h2><p class="muted">${slow?"The schedule can't be reached yet. It will appear as soon as the connection returns.":'This usually takes a moment.'}</p></div>`;return}
+  if(!db){root.innerHTML=`<div class="empty"><h2>Sign in to see the schedule</h2><p class="muted">This schedule opens for people signed in to Claude who have been given access. If you are signed in, ask the program chair to share it with you.</p></div>`;return}
+  if(dbError){root.innerHTML=`<div class="empty"><h2>The schedule isn't available right now</h2><p class="muted">Reload the page to try again. If this keeps happening, your access may have changed.</p></div>`;return}
+  if(!st){root.innerHTML=head(null)+`<div class="empty"><h2>${editing()?'No draft schedule yet':'The schedule has not been published yet'}</h2><p class="muted">${editing()?'A draft appears here once the schedule data is loaded.':'It will appear here as soon as the program chair publishes it.'}</p></div>`;wire();return}
+  let body=ui.view==='calendar'?calendar(st):ui.view==='load'&&editing()?loadView():board(st);
+  const showSide=editing()&&ui.view!=='load';
+  root.innerHTML=head(st)+`<div class="layout ${showSide?'':'solo'}"><div style="min-width:0">${body}</div>${showSide?side(st):''}</div>`;
+  wire();renderStatus();
+}
+function head(st){
+  const seg=(k,opts)=>`<div class="seg" role="group">${opts.map(([v,l])=>`<button data-ui="${k}" data-v="${v}" aria-pressed="${ui[k]===v}">${l}</button>`).join('')}</div>`;
+  let h=`<div class="top"><h1>27–28 Academic Map</h1><span class="sub" id="status"></span><span class="grow"></span>`;
+  if(canEdit){
+    h+=`<div class="seg" role="group"><button data-mode="edit" aria-pressed="${mode==='edit'}">Edit draft</button><button data-mode="view" aria-pressed="${mode==='view'}">Faculty view</button></div>`;
+  }
+  h+=`</div>`;
+  if(editing()){
+    h+=`<div class="bar"><label class="inline" for="plan">Plan <select id="plan">${Object.entries(plans).map(([id,p])=>`<option value="${esc(id)}" ${id===planId?'selected':''}>${esc((p.state&&p.state.name)||id)}</option>`).join('')}</select></label>
+    <button data-act="plans">Plans</button><button data-act="undo" ${undo.length?'':'disabled'}>Undo</button><button data-act="redo" ${redo.length?'':'disabled'}>Redo</button>
+    <button data-act="add">Add section</button><button data-act="settings">Instructors and dates</button><span class="grow"></span>${downloads?`<button data-act="facultypage">Download faculty page</button>`:''}<button class="primary" data-act="publish">Publish to faculty</button></div>`;
+  }
+  if(st){
+    h+=`<div class="bar">${seg('sem',[['fall','Fall 2027'],['spring','Spring 2028']])}${seg('view',editing()?[['board','Board'],['calendar','Calendar'],['load','Loads']]:[['board','Board'],['calendar','Calendar']])}
+    <label class="inline" for="colorBy">Color by <select id="colorBy">${[['instructor','Instructor'],['cohort','Cohort'],['format','Format']].map(([v,l])=>`<option value="${v}" ${ui.colorBy===v?'selected':''}>${l}</option>`).join('')}</select></label>
+    <label class="inline" for="fi">Instructor <select id="fi"><option value="">All</option>${st.instructors.map(i=>`<option value="${esc(i.id)}" ${ui.fi===i.id?'selected':''}>${esc(i.name)}</option>`).join('')}</select></label>
+    <label class="inline" for="fc">Cohort <select id="fc"><option value="">All</option>${st.cohorts.map(c=>`<option value="${c.id}" ${ui.fc===c.id?'selected':''}>${esc(c.label)}</option>`).join('')}</select></label>
+    <label class="inline" for="ff">Format <select id="ff"><option value="">All</option>${[...new Set(st.sections.map(s=>s.format||'Not listed'))].sort().map(f=>`<option ${ui.ff===f?'selected':''}>${esc(f)}</option>`).join('')}</select></label>
+    ${downloads?`<button data-act="export">Export to Excel</button>`:''}</div>`;
+    h+=legend(st);
+  }
+  return h;
+}
+function legend(st){
+  let items;
+  if(ui.colorBy==='cohort')items=st.cohorts.map(c=>[{y3:'purple',y2:'teal',y1:'pink'}[c.id]||'gray',c.label]);
+  else if(ui.colorBy==='format')items=[['teal','Hybrid'],['blue','Online sync'],['orange','Two formats listed'],['gray','Not listed']];
+  else items=st.instructors.map(i=>[i.color||'gray',i.name]);
+  return`<div class="legend">${items.map(([c,l])=>`<span class="k"><span class="sw" style="background:var(--${c}-bg)"></span>${esc(l)}</span>`).join('')}${editing()?`<span class="k"><span class="sw" style="border:2px solid var(--danger)"></span>Overlap</span><span class="k"><span class="sw" style="border:2px dashed var(--warn)"></span>Needs a check</span>`:''}</div>`}
+
+function statusMap(st){const m={};if(!editing())return m;analyze(st,ui.sem).issues.forEach(i=>{if(i.level==='load'||i.kind==='Capacity')return;i.ids.forEach(id=>{if(i.level==='clash')m[id]='clash';else if(!m[id])m[id]='check'})});return m}
+function card(st,s,m){
+  const c=colorOf(st,s),status=m[s.id]||'',q=editing()&&(s.flags||[]).length;
+  return`<div class="card ${status} ${ui.hl.includes(s.id)?'hl':''}" role="button" tabindex="0" data-sec="${esc(s.id)}" ${editing()?'draggable="true"':''} style="${paint(c)}">
+  <div class="l1"><span class="code">${esc(label(s))}</span><span class="cr">${s.credits==null?'? cr':s.credits+' cr'}</span></div>
+  <div class="ttl">${esc(s.title)}</div><div class="mt">${esc(fmtRange(s))} · ${esc(patText(s))}</div><div class="who">${esc(insOf(st,s.instructor).short)}</div>
+  ${status==='clash'?'<div class="alert">Overlap</div>':status==='check'?'<div class="alert">Check</div>':''}${q?`<span class="sr">Has a workbook question</span>`:''}</div>`}
+function board(st){
+  const vis=visible(st),m=statusMap(st);
+  const used=d=>st.sections.some(s=>s.sem===ui.sem&&s.day===d);
+  const days=DAYS.filter(d=>['Mon','Tue','Wed','Thu'].includes(d)||used(d));
+  const parking=editing()||vis.some(s=>!s.day);
+  const cols=days.length+(parking?1:0);
+  let h=`<div class="scroll"><div class="board" style="grid-template-columns:82px repeat(${cols},minmax(136px,1fr))"><div class="ch"><span class="sr">Cohort</span></div>${days.map(d=>`<div class="ch">${DAYNAME[d]}</div>`).join('')}${parking?'<div class="ch">No day set</div>':''}`;
+  st.cohorts.filter(c=>!ui.fc||c.id===ui.fc).forEach(c=>{
+    h+=`<div class="rh">${esc(c.label)}<small>${c.size} students</small></div>`;
+    days.forEach(d=>{h+=`<div class="cell" data-cohort="${c.id}" data-day="${d}">${vis.filter(s=>s.cohort===c.id&&s.day===d).sort(byTime).map(s=>card(st,s,m)).join('')}</div>`});
+    if(parking)h+=`<div class="cell parking" data-cohort="${c.id}" data-day="">${vis.filter(s=>s.cohort===c.id&&!s.day).map(s=>card(st,s,m)).join('')}</div>`;
+  });
+  return h+'</div></div>'}
+const byTime=(a,b)=>(a.start||'99').localeCompare(b.start||'99')||a.code.localeCompare(b.code)||a.sec.localeCompare(b.sec);
+
+function calendar(st){
+  const sem=st.semesters[ui.sem],vis=visible(st);
+  const map={},unset=[];
+  vis.forEach(s=>{const ds=meetingDates(s,sem);if(!ds)unset.push(s);else ds.forEach(d=>(map[d]=map[d]||[]).push(s))});
+  const days=DAYS.filter(d=>['Mon','Tue','Wed','Thu'].includes(d)||vis.some(s=>s.day===d));
+  const st0=new Date(sem.start+'T00:00:00Z'),end=new Date(sem.end+'T00:00:00Z'),off=new Set(sem.noClass||[]);
+  let mon=new Date(st0.getTime()-((st0.getUTCDay()+6)%7)*864e5);
+  const chip=s=>`<button class="chip" data-sec="${esc(s.id)}" style="${paint(colorOf(st,s))}" title="${esc(s.title+' · '+insOf(st,s.instructor).name+' · '+fmtRange(s))}">${esc(label(s))}</button>`;
+  let h='';
+  if(unset.length)h+=`<div class="panel" style="margin-bottom:10px"><h2>Dates not set yet</h2><div class="chips">${unset.sort(byTime).map(chip).join('')}</div><p class="muted" style="margin:6px 0 0">The workbook doesn't give a meeting pattern for these sections, so they aren't on the calendar below.</p></div>`;
+  h+=`<div class="scroll"><div class="cal" style="grid-template-columns:82px repeat(${days.length},minmax(130px,1fr))"><div class="ch">Week of</div>${days.map(d=>`<div class="ch">${DAYNAME[d]}</div>`).join('')}`;
+  for(;mon<=end;mon=new Date(mon.getTime()+7*864e5)){
+    h+=`<div class="wk">${fmtD(mon.toISOString().slice(0,10))}</div>`;
+    days.forEach(d=>{const dt=new Date(mon.getTime()+DAYS.indexOf(d)*864e5),s=dt.toISOString().slice(0,10),out=dt<st0||dt>end,isOff=off.has(s);
+      const list=(map[s]||[]).slice().sort(byTime);
+      h+=`<div class="dc ${isOff?'off':''} ${out?'out':''}"><span class="d">${fmtD(s)}${isOff?' · no classes':''}</span>${list.map(chip).join('')}</div>`});
+  }
+  return h+'</div></div>'}
+
+function side(st){
+  const a=analyze(st,ui.sem),cl=a.issues.filter(i=>i.level==='clash'),ch=a.issues.filter(i=>i.level==='check');
+  const list=(arr,cls)=>`<ul class="iss">${arr.map(i=>`<li><button class="${cls}" data-issue="${esc(i.ids.join(','))}">${esc(i.text)}</button></li>`).join('')}</ul>`;
+  const qs=st.sections.filter(s=>s.sem===ui.sem&&(s.flags||[]).length);
+  return`<aside class="side"><section class="panel"><h2>Overlaps <span class="count ${cl.length?'clash':'good'}">${cl.length}</span></h2>${cl.length?list(cl,'clash'):'<p class="muted" style="margin:0">No confirmed overlaps this semester.</p>'}</section>
+  <section class="panel"><h2>Needs a check <span class="count ${ch.length?'check':'good'}">${ch.length}</span></h2>${ch.length?list(ch,''):'<p class="muted" style="margin:0">Nothing to check.</p>'}</section>
+  <section class="panel"><h2>Credit load</h2><div class="load">${a.loads.map(l=>{const t=l.ins.target,on=t!=null&&l.credits===t;return`<span>${esc(l.ins.short)}${l.missing?` <span class="muted">(${l.missing} without credits)</span>`:''}</span><span class="n ${t==null?'':on?'on':'off'}">${l.credits}${t!=null?' / '+t:''}</span>`}).join('')}</div></section>
+  <section class="panel"><h2>Workbook questions <span class="count ${qs.length?'check':'good'}">${qs.length}</span></h2>${qs.length?`<ul class="iss">${qs.map(s=>`<li><button data-sec="${esc(s.id)}">${esc(fullLabel(s))}: ${esc(s.flags[0])}</button></li>`).join('')}</ul>`:'<p class="muted" style="margin:0">All resolved.</p>'}</section></aside>`}
+
+function loadView(){
+  const af=analyze(state,'fall').loads,as=analyze(state,'spring').loads;
+  const cell=(l)=>{const t=l.ins.target,on=t!=null&&l.credits===t;const col=t==null?'':on?'var(--ok)':'var(--danger)';
+    return`<td><strong style="font-family:var(--mono);color:${col}">${l.credits}${t!=null?' / '+t:''}</strong>${l.missing?` <span class="muted">${l.missing} without credits</span>`:''}<div class="chips">${l.sections.slice().sort(byTime).map(s=>`<button class="chip" data-sec="${esc(s.id)}" style="${paint(l.ins.color||'gray')}">${esc(label(s))}</button>`).join('')}</div></td>`};
+  return`<div class="scroll"><table class="tbl"><thead><tr><th>Instructor</th><th>Fall 2027</th><th>Spring 2028</th></tr></thead><tbody>${af.map((l,i)=>`<tr><td>${esc(l.ins.name)}</td>${cell(l)}${cell(as[i])}</tr>`).join('')}</tbody></table></div>`}
+
+function renderStatus(){
+  const el=$('#status');if(!el)return;
+  if(editing()){
+    const pub=publishedMeta?`Faculty see the version published ${fmtStamp(publishedMeta.publishedAt)}`:'Nothing published to faculty yet';
+    const same=published&&state&&JSON.stringify(published)===JSON.stringify(forFaculty(state));
+    el.textContent=`${saveStatus?saveStatus+' · ':''}${pub}${published&&!same?' · draft has unpublished changes':''}`;
+    document.querySelectorAll('[data-act=undo]').forEach(b=>b.disabled=!undo.length);document.querySelectorAll('[data-act=redo]').forEach(b=>b.disabled=!redo.length);
+  }else el.textContent=publishedMeta?`Published ${fmtStamp(publishedMeta.publishedAt)}. This page checks for updates on its own.`:(canEdit?'Nothing published yet':'');
+}
+
+function wire(){
+  root.querySelectorAll('[data-ui]').forEach(b=>b.onclick=()=>{ui[b.dataset.ui]=b.dataset.v;renderMain();if(ui.drawer==='section'&&b.dataset.ui==='sem')closeDrawer()});
+  root.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;ui.hl=[];if(mode==='view'&&ui.view==='load')ui.view='board';closeDrawer();renderMain()});
+  [['fi','fi'],['fc','fc'],['ff','ff']].forEach(([id,k])=>{const e=$('#'+id);if(e)e.onchange=()=>{ui[k]=e.value;renderMain()}});
+  const cb=$('#colorBy');if(cb)cb.onchange=()=>{ui.colorBy=cb.value;store.set('colorBy',cb.value);renderMain()};
+  const pl=$('#plan');if(pl)pl.onchange=()=>switchPlan(pl.value);
+  root.querySelectorAll('[data-act]').forEach(b=>b.onclick=()=>act(b.dataset.act));
+  root.querySelectorAll('[data-issue]').forEach(b=>b.onclick=()=>{ui.hl=b.dataset.issue.split(',');renderMain();clearTimeout(wire.t);wire.t=setTimeout(()=>{ui.hl=[];renderMain()},2600)});
+  root.querySelectorAll('[data-sec]').forEach(c=>{const open=()=>openSection(c.dataset.sec);c.onclick=open;
+    if(c.classList.contains('card'))c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}};
+    if(c.draggable)c.ondragstart=e=>{e.dataTransfer.setData('text/plain',c.dataset.sec);e.dataTransfer.effectAllowed='move'}});
+  if(editing())root.querySelectorAll('.cell').forEach(z=>{
+    z.ondragover=e=>{e.preventDefault();z.classList.add('over')};
+    z.ondragleave=e=>{if(!z.contains(e.relatedTarget))z.classList.remove('over')};
+    z.ondrop=e=>{e.preventDefault();z.classList.remove('over');moveSection(e.dataTransfer.getData('text/plain'),z.dataset.cohort,z.dataset.day||null)}});
+}
+function moveSection(id,cohort,day){
+  const s=state.sections.find(x=>x.id===id);if(!s)return;
+  if(s.cohort!==cohort){toast('Sections stay in their cohort when dragged. Change the cohort in the section details.');return}
+  if(s.day===day)return;
+  commit(st=>{st.sections.find(x=>x.id===id).day=day},{drawer:ui.sel===id});
+  const after=analyze(state,ui.sem).issues.filter(i=>i.ids.includes(id)&&i.level==='clash');
+  toast(`${fullLabel(s)} moved to ${day?DAYNAME[day]:'No day set'}.${after.length?' It now overlaps; see the Overlaps list.':''}`);
+}
+function act(a){
+  if(a==='undo')step(undo,redo);else if(a==='redo')step(redo,undo);
+  else if(a==='settings'){ui.drawer='settings';renderDrawer()}
+  else if(a==='plans'){ui.drawer='plans';ui.confirm=null;renderDrawer()}
+  else if(a==='publish'){ui.drawer='publish';renderDrawer()}
+  else if(a==='add')addSection();
+  else if(a==='export')exportXlsx();
+  else if(a==='facultypage')downloadFacultyPage();
+}
+function addSection(){
+  const id='s'+Date.now().toString(36);
+  commit(st=>st.sections.push({id,sem:ui.sem,cohort:ui.fc||'y1',code:'MHS ',sec:'',title:'New section',day:null,start:null,end:null,pattern:'weekly',half:null,dates:[],credits:3,cap:null,format:'',instructor:(st.instructors.find(i=>i.kind==='placeholder')||st.instructors[0]).id,note:'',flags:[]}));
+  openSection(id);
+}
+function openSection(id){ui.sel=id;ui.drawer='section';ui.confirm=null;renderDrawer()}
+function closeDrawer(){ui.drawer=null;ui.sel=null;drawerEl.hidden=true;drawerEl.innerHTML=''}
+function closeBtn(){return`<button data-close aria-label="Close panel">Close</button>`}
+
+function parseDates(txt,sem){
+  const yr=+sem.start.slice(0,4),out=[],bad=[];
+  txt.split(/[,\s]+/).filter(Boolean).forEach(t=>{const m=t.match(/^(\d{1,2})\/(\d{1,2})$/);
+    if(!m){bad.push(t);return}const s=`${yr}-${m[1].padStart(2,'0')}-${m[2].padStart(2,'0')}`;
+    if(isNaN(new Date(s+'T00:00:00Z'))||s<sem.start||s>sem.end)bad.push(t);else out.push(s)});
+  return{out:[...new Set(out)].sort(),bad}}
+const toMD=s=>{const[,m,d]=s.split('-').map(Number);return m+'/'+d};
+
+function renderDrawer(){
+  if(!ui.drawer){drawerEl.hidden=true;return}
+  drawerEl.hidden=false;
+  if(ui.drawer==='section')sectionDrawer();else if(ui.drawer==='settings')settingsDrawer();else if(ui.drawer==='plans')plansDrawer();else publishDrawer();
+  const c=drawerEl.querySelector('[data-close]');if(c)c.onclick=closeDrawer;
+}
+function sectionSummary(st,s){
+  const ds=meetingDates(s,st.semesters[s.sem]);
+  return ds?`<div class="muted" style="margin-bottom:4px">${ds.length} meetings</div><div class="dates">${ds.map(d=>`<span>${fmtD(d)}</span>`).join('')}</div>`:`<p class="muted" style="margin:0">${esc(s.pattern==='eight'?'Choose which half of the semester to see dates.':!s.day&&s.pattern!=='custom'?'Choose a day to see dates.':'Meeting dates are not set yet.')}</p>`}
+function sectionDrawer(){
+  const st=data(),s=st.sections.find(x=>x.id===ui.sel);if(!s){closeDrawer();return}
+  if(!editing()){
+    const i=insOf(st,s.instructor);
+    drawerEl.innerHTML=`<header><h2>${esc(fullLabel(s))}</h2>${closeBtn()}</header><div><strong>${esc(s.title)}</strong></div>
+    <dl style="display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0">
+    ${[['Instructor',i.name],['Cohort',(st.cohorts.find(c=>c.id===s.cohort)||{}).label],['Day',s.day?DAYNAME[s.day]:'Not set'],['Time',fmtRange(s)],['Meets',patText(s)],['Credits',s.credits==null?'Not listed':s.credits],['Cap',s.cap==null?'Not listed':s.cap],['Format',s.format||'Not listed']].concat(s.note?[['Note',s.note]]:[]).map(([k,v])=>`<dt class="muted">${k}</dt><dd style="margin:0">${esc(v)}</dd>`).join('')}</dl>
+    <h2>Meeting dates</h2>${sectionSummary(st,s)}`;
+    return}
+  const o=(arr,val)=>arr.map(([v,l])=>`<option value="${esc(v)}" ${String(val==null?'':val)===String(v)?'selected':''}>${esc(l)}</option>`).join('');
+  drawerEl.innerHTML=`<header><h2>${esc(fullLabel(s))}</h2>${closeBtn()}</header>
+  ${(s.flags||[]).map((f,i)=>`<div class="q"><span>${esc(f)}</span><button class="link" data-resolve="${i}">Mark resolved</button></div>`).join('')}
+  <div class="g2"><label>Course<input id="f-code" value="${esc(s.code)}"></label><label>Section<input id="f-sec" value="${esc(s.sec)}"></label></div>
+  <label>Title<input id="f-title" value="${esc(s.title)}"></label>
+  <label>Instructor<select id="f-instructor">${o(st.instructors.map(i=>[i.id,i.name]).concat([['__new','Add a part-time or adjunct name…']]),s.instructor)}</select></label>
+  <div id="w-newpt" ${insOf(st,s.instructor).kind==='placeholder'?'':'hidden'}><div class="row"><label style="flex:1">Part-time or adjunct name<input id="f-newpt" placeholder="First and last name"></label><button id="b-newpt" style="align-self:flex-end">Add and assign</button></div><span class="err" id="e-newpt"></span></div>
+  <div class="g2"><label>Cohort<select id="f-cohort">${o(st.cohorts.map(c=>[c.id,c.label]),s.cohort)}</select></label><label>Day<select id="f-day">${o([['','No day set'],...DAYS.map(d=>[d,DAYNAME[d]])],s.day)}</select></label></div>
+  <div class="g2"><label>Start<input id="f-start" type="time" value="${esc(s.start||'')}"></label><label>End<input id="f-end" type="time" value="${esc(s.end||'')}"></label></div>
+  <div class="g2"><label>Meets<select id="f-pattern">${o([['weekly','Weekly'],['A','A week'],['B','B week'],['eight','Half semester'],['custom','Specific dates'],['unset','Not set']],s.pattern)}</select></label>
+  <label id="w-half" ${s.pattern==='eight'?'':'hidden'}>Which half<select id="f-half">${o([['','Not chosen'],['first','First half'],['second','Second half']],s.half)}</select></label></div>
+  <label id="w-dates" ${s.pattern==='custom'?'':'hidden'}>Dates (month/day, separated by commas)<textarea id="f-dates" rows="2" placeholder="9/8, 10/6, 11/3">${esc((s.dates||[]).map(toMD).join(', '))}</textarea><span class="err" id="e-dates"></span></label>
+  <div class="g2"><label>Credits<input id="f-credits" type="number" min="0" step="1" value="${s.credits==null?'':s.credits}"></label><label>Cap<input id="f-cap" type="number" min="0" step="1" value="${s.cap==null?'':s.cap}"></label></div>
+  <label>Format<input id="f-format" value="${esc(s.format||'')}" placeholder="Hybrid"></label>
+  <label>Note for faculty<textarea id="f-note" rows="2">${esc(s.note||'')}</textarea></label>
+  <div><h2 style="margin-bottom:5px">Meeting dates</h2><div id="sum">${sectionSummary(st,s)}</div></div>
+  ${s.raw?`<div class="raw">Workbook cell ${esc(s.source)}: ${esc(s.raw)}</div>`:''}
+  <div class="row"><button id="b-dup">Duplicate</button>${ui.confirm==='del'?`<span class="muted">Delete this section?</span><button class="danger" id="b-del2">Delete</button><button id="b-keep">Keep</button>`:`<button class="danger" id="b-del">Delete</button>`}</div>`;
+  const id=s.id,set=(k,v)=>{commit(st=>{st.sections.find(x=>x.id===id)[k]=v});const sum=$('#sum');if(sum){const cur=state.sections.find(x=>x.id===id);sum.innerHTML=sectionSummary(state,cur);const h=drawerEl.querySelector('header h2');if(h)h.textContent=fullLabel(cur)}};
+  const bind=(f,k,tr)=>{const e=$('#f-'+f);e.onchange=()=>set(k,tr?tr(e.value):e.value)};
+  bind('code','code');bind('sec','sec');bind('title','title');bind('cohort','cohort');
+  $('#f-instructor').onchange=e=>{const v=e.target.value,w=$('#w-newpt');
+    if(v==='__new'){w.hidden=false;$('#f-newpt').focus();return}
+    set('instructor',v);w.hidden=insOf(state,v).kind!=='placeholder'};
+  const addPt=()=>{const name=$('#f-newpt').value.trim().replace(/\s+/g,' ');
+    if(!name){$('#e-newpt').textContent='Enter a name.';return}
+    const found=state.instructors.find(i=>i.name.toLowerCase()===name.toLowerCase());
+    const nid=found?found.id:'i'+Date.now().toString(36);
+    commit(st=>{if(!found)st.instructors.push({id:nid,name,short:name.split(' ').pop(),kind:'named',color:'orange',target:null});st.sections.find(x=>x.id===id).instructor=nid},{drawer:true});
+    toast(found?`${name} assigned to ${fullLabel(s)}.`:`${name} added and assigned to ${fullLabel(s)}.`)};
+  $('#b-newpt').onclick=addPt;
+  $('#f-newpt').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();addPt()}};
+  $('#f-newpt').oninput=()=>{$('#e-newpt').textContent=''};
+  bind('day','day',v=>v||null);bind('start','start',v=>v||null);bind('end','end',v=>v||null);
+  bind('credits','credits',v=>v===''?null:Number(v));bind('cap','cap',v=>v===''?null:Number(v));bind('format','format');bind('note','note');bind('half','half',v=>v||null);
+  $('#f-pattern').onchange=e=>{const v=e.target.value;$('#w-half').hidden=v!=='eight';$('#w-dates').hidden=v!=='custom';set('pattern',v)};
+  $('#f-dates').onchange=e=>{const{out,bad}=parseDates(e.target.value,state.semesters[s.sem]);$('#e-dates').textContent=bad.length?`Not in this semester or not month/day: ${bad.join(', ')}`:'';set('dates',out)};
+  drawerEl.querySelectorAll('[data-resolve]').forEach(b=>b.onclick=()=>commit(st=>st.sections.find(x=>x.id===id).flags.splice(+b.dataset.resolve,1),{drawer:true}));
+  $('#b-dup').onclick=()=>{const nid='s'+Date.now().toString(36);commit(st=>{const c=JSON.parse(JSON.stringify(st.sections.find(x=>x.id===id)));c.id=nid;c.flags=[];delete c.raw;delete c.source;st.sections.push(c)});openSection(nid)};
+  const d=$('#b-del');if(d)d.onclick=()=>{ui.confirm='del';renderDrawer()};
+  const k=$('#b-keep');if(k)k.onclick=()=>{ui.confirm=null;renderDrawer()};
+  const d2=$('#b-del2');if(d2)d2.onclick=()=>{commit(st=>{st.sections=st.sections.filter(x=>x.id!==id)});closeDrawer();toast('Section deleted. Undo brings it back.')};
+}
+function settingsDrawer(){
+  const st=state;
+  const semBlock=k=>{const m=st.semesters[k];return`<h2>${esc(m.label)}</h2><div class="g2"><label>First day<input type="date" data-sem="${k}" data-f="start" value="${m.start}"></label><label>Last day<input type="date" data-sem="${k}" data-f="end" value="${m.end}"></label></div>
+  <label>No-class dates (month/day)<textarea data-sem="${k}" data-f="noClass" rows="2">${esc((m.noClass||[]).map(toMD).join(', '))}</textarea><span class="err" data-err="${k}"></span></label>`};
+  drawerEl.innerHTML=`<header><h2>Instructors and dates</h2>${closeBtn()}</header>
+  <h2>Instructors</h2><p class="muted" style="margin:0">Add part-time faculty by name here, then assign them in a section. People with no target aren't checked against a load.</p>
+  ${st.instructors.map(i=>{const used=st.sections.some(s=>s.instructor===i.id);return`<div class="insrow" data-ins="${esc(i.id)}"><label>Name<input data-f="name" value="${esc(i.name)}"></label><label>Short name on cards<input data-f="short" value="${esc(i.short)}"></label>
+  <label>Credit target per semester<input data-f="target" type="number" min="0" value="${i.target==null?'':i.target}"></label><label>Color<select data-f="color">${COLORS.map(c=>`<option ${i.color===c?'selected':''}>${c}</option>`).join('')}</select></label>
+  ${i.kind==='placeholder'?'<span class="muted" style="grid-column:1/-1">Stands in for several people, so overlaps are not checked.</span>':''}${used?'':`<button class="danger" data-rm="${esc(i.id)}" style="grid-column:1/-1">Remove ${esc(i.short)}</button>`}</div>`}).join('')}
+  <button id="add-ins">Add instructor</button>${semBlock('fall')}${semBlock('spring')}
+  <p class="muted" style="margin:0">A and B weeks recalculate from these dates.</p>
+  <h2>Cohort sizes</h2><div class="g2">${st.cohorts.map(c=>`<label>${esc(c.label)}<input type="number" min="0" data-co="${c.id}" value="${c.size}"></label>`).join('')}</div>`;
+  drawerEl.querySelectorAll('[data-ins] [data-f]').forEach(e=>e.onchange=()=>{const id=e.closest('[data-ins]').dataset.ins,f=e.dataset.f;let v=e.value;if(f==='target')v=v===''?null:Number(v);commit(st=>{const i=st.instructors.find(x=>x.id===id);i[f]=v;if(i.kind==='placeholder'&&f==='name')i.kind='placeholder'})});
+  drawerEl.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>commit(st=>{st.instructors=st.instructors.filter(i=>i.id!==b.dataset.rm)},{drawer:true}));
+  $('#add-ins').onclick=()=>commit(st=>st.instructors.push({id:'i'+Date.now().toString(36),name:'New instructor',short:'New',kind:'named',color:'orange',target:null}),{drawer:true});
+  drawerEl.querySelectorAll('[data-co]').forEach(e=>e.onchange=()=>commit(st=>{st.cohorts.find(c=>c.id===e.dataset.co).size=Number(e.value)||0}));
+  drawerEl.querySelectorAll('[data-sem]').forEach(e=>e.onchange=()=>{const k=e.dataset.sem,f=e.dataset.f;
+    if(f==='noClass'){const m=state.semesters[k],{out,bad}=parseDates(e.value,{start:m.start.slice(0,4)+'-01-01',end:m.start.slice(0,4)+'-12-31'});drawerEl.querySelector(`[data-err=${k}]`).textContent=bad.length?`Couldn't read: ${bad.join(', ')}`:'';commit(st=>{st.semesters[k].noClass=out})}
+    else if(e.value)commit(st=>{st.semesters[k][f]=e.value})});
+}
+function plansDrawer(){
+  drawerEl.innerHTML=`<header><h2>Plans</h2>${closeBtn()}</header><p class="muted" style="margin:0">Each plan is its own copy of the schedule. Faculty see only the one you publish.</p>
+  <label>Name of this plan<input id="p-name" value="${esc(state.name||'')}"></label>
+  <div class="row"><label style="flex:1">New copy named<input id="p-new" placeholder="Plan B"></label><button id="p-copy" style="align-self:flex-end">Copy this plan</button></div>
+  <div class="err" id="p-err"></div>
+  ${Object.keys(plans).length>1?(ui.confirm==='plan'?`<div class="row"><span class="muted">Delete "${esc(state.name)}"?</span><button class="danger" id="p-del2">Delete</button><button id="p-keep">Keep</button></div>`:`<button class="danger" id="p-del">Delete this plan</button>`):''}`;
+  $('#p-name').onchange=e=>commit(st=>{st.name=e.target.value||'Untitled plan'});
+  $('#p-copy').onclick=async()=>{const n=$('#p-new').value.trim();if(!n){$('#p-err').textContent='Enter a name for the new copy.';return}
+    const id='p'+Date.now().toString(36),body={state:Object.assign(JSON.parse(JSON.stringify(state)),{name:n}),updatedAt:new Date().toISOString(),updatedBy:clientId};
+    try{await db.doc('drafts/'+id).set(body);plans[id]=body;switchPlan(id);closeDrawer();toast(`Now editing ${n}.`)}catch(e){$('#p-err').textContent="Couldn't create the copy. Try again shortly."}};
+  const d=$('#p-del');if(d)d.onclick=()=>{ui.confirm='plan';renderDrawer()};const k=$('#p-keep');if(k)k.onclick=()=>{ui.confirm=null;renderDrawer()};
+  const d2=$('#p-del2');if(d2)d2.onclick=async()=>{const gone=planId;try{await db.doc('drafts/'+gone).delete();delete plans[gone];switchPlan(Object.keys(plans)[0]);closeDrawer();toast('Plan deleted.')}catch(e){toast("Couldn't delete the plan.")}};
+}
+function publishDrawer(){
+  const f=analyze(state,'fall').issues,s=analyze(state,'spring').issues,cnt=(a,l)=>a.filter(i=>i.level===l).length;
+  const clash=cnt(f,'clash')+cnt(s,'clash'),check=cnt(f,'check')+cnt(s,'check'),load=cnt(f,'load')+cnt(s,'load');
+  drawerEl.innerHTML=`<header><h2>Publish to faculty</h2>${closeBtn()}</header><p style="margin:0">Faculty will see <strong>${esc(state.name)}</strong> as soon as you publish, and your draft stays separate until you publish again.</p>
+  <p class="muted" style="margin:0">Still open in this plan: ${clash} overlaps, ${check} items to check, ${load} loads off target. Publishing doesn't change any of these. Workbook questions and load targets are left out of what faculty see.</p>
+  <div class="row"><button class="primary" id="pub-go">Publish</button><button data-close>Cancel</button></div>`;
+  $('#pub-go').onclick=async()=>{const body={schedule:forFaculty(state),publishedAt:new Date().toISOString()};
+    try{await db.doc('published/current').set(body);closeDrawer();toast('Published. Faculty pages update on their own.')}catch(e){toast("Couldn't publish. Try again shortly.")}};
+}
+function switchPlan(id){if(dirty){clearTimeout(saveTimer);flush()}planId=id;state=JSON.parse(JSON.stringify(plans[id].state));undo=[];redo=[];store.set('plan',id);renderMain();if(ui.drawer)closeDrawer()}
+
+/* A standalone copy of the published schedule for a public web host. It holds only faculty-safe data. */
+async function downloadFacultyPage(){
+  if(!published||!publishedMeta){toast('Publish to faculty first. The download uses the published version.');return}
+  try{
+    const bytes=Uint8Array.from(atob($('#fp').textContent.trim()),c=>c.charCodeAt(0));
+    const src=JSON.parse(new TextDecoder().decode(bytes));
+    const payload=JSON.stringify({schedule:published,publishedAt:publishedMeta.publishedAt}).replace(/</g,'\\u003c');
+    const close='</'+'script>';
+    const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><meta name="schedule-published" content="'+esc(publishedMeta.publishedAt)+'"><title>27–28 Academic Map</title>'+src.fonts+'<style>body{margin:0}'+src.css+'</style></head><body><main id="app"></main><aside id="drawer" class="drawer" aria-label="Details" hidden></aside><div id="toast" class="toast" role="status" hidden></div><script>window.__STATIC__='+payload+';'+close+'<script>'+src.js+close+'</body></html>';
+    await downloads.save({filename:'index.html',data:html});
+    toast('Upload index.html to your web host to update the faculty link.');
+  }catch(e){if(!e||e.code!=='declined')toast("Couldn't create the file here.")}
+}
+
+async function exportXlsx(){
+  if(!window.XLSX){toast("The Excel tool didn't load. Reload the page and try again.");return}
+  const st=data(),wb=XLSX.utils.book_new();
+  ['fall','spring'].forEach(k=>{const m=st.semesters[k];
+    const rows=st.sections.filter(s=>s.sem===k).sort((a,b)=>a.cohort.localeCompare(b.cohort)||DAYS.indexOf(a.day)-DAYS.indexOf(b.day)||byTime(a,b)).map(s=>{const ds=meetingDates(s,m);return{Cohort:(st.cohorts.find(c=>c.id===s.cohort)||{}).label,Course:s.code,Section:s.sec,Title:s.title,Instructor:insOf(st,s.instructor).name,Day:s.day?DAYNAME[s.day]:'',Start:fmtT(s.start),End:fmtT(s.end),Meets:patText(s),Dates:ds?ds.map(toMD).join(', '):'',Credits:s.credits,Cap:s.cap,Format:s.format,Note:s.note}});
+    XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(rows),m.label)});
+  const buf=XLSX.write(wb,{type:'array',bookType:'xlsx'});
+  try{await downloads.save({filename:'27-28 Academic Map.xlsx',data:buf})}catch(e){if(e&&e.code!=='declined')toast("Couldn't save the file here.")}
+}
+
+/* Boot */
+if(window.__STATIC__){
+  db={};loaded=true;mode='view';published=window.__STATIC__.schedule;publishedMeta={publishedAt:window.__STATIC__.publishedAt};renderMain();
+  const stamp=window.__STATIC__.publishedAt;
+  setInterval(async()=>{try{const r=await fetch(location.pathname+'?v='+Date.now(),{cache:'no-store'});if(!r.ok)return;const m=(await r.text()).match(/name="schedule-published" content="([^"]+)"/);if(m&&m[1]!==stamp)location.reload()}catch(e){}},window.__POLL_MS__||120000);
+  return}
+if(!window.claude){db=null;renderMain();return}
+renderMain();
+const[dbNs,userNs,dlNs]=await Promise.all([claude.use('db'),claude.use('user'),claude.use('downloads')]);
+db=dbNs;user=userNs;downloads=dlNs;
+canEdit=user?await user.canEdit():false;
+if(!db){renderMain();return}
+mode=canEdit?'edit':'view';
+renderMain();
+const loadTimer=setTimeout(()=>{slow=true;if(!loaded)renderMain()},10000);
+const done=()=>{clearTimeout(loadTimer);loaded=true};
+const fail=()=>{clearTimeout(loadTimer);dbError=true;renderMain()};
+db.doc('published/current').onSnapshot(sn=>{
+  const d=sn.exists?sn.data():null;published=d?JSON.parse(JSON.stringify(d.schedule)):null;publishedMeta=d?{publishedAt:d.publishedAt}:null;
+  if(!canEdit){if(!sn.metadata.fromCache||d)done();if(ui.drawer==='section'&&published&&!published.sections.some(s=>s.id===ui.sel))closeDrawer();renderMain();if(ui.drawer)renderDrawer()}
+  else if(mode==='view'){renderMain()}else renderStatus();
+},fail);
+if(canEdit){
+  db.collection('drafts').onSnapshot(sn=>{
+    sn.docs.forEach(x=>{const b=JSON.parse(JSON.stringify(x.data()));if(x.id===planId&&(b.updatedBy===clientId||dirty))return;plans[x.id]=b;if(x.id===planId&&mode==='edit'){state=JSON.parse(JSON.stringify(b.state));undo=[];redo=[]}});
+    Object.keys(plans).forEach(id=>{if(!sn.docs.some(x=>x.id===id)&&!sn.metadata.fromCache&&!sn.metadata.hasPendingWrites)delete plans[id]});
+    if(!planId||!plans[planId]){const saved=store.get('plan');planId=plans[saved]?saved:Object.keys(plans)[0]||null;state=planId?JSON.parse(JSON.stringify(plans[planId].state)):null}
+    if(!sn.metadata.fromCache||sn.size)done();
+    if(!(ui.drawer&&document.activeElement&&drawerEl.contains(document.activeElement)))renderMain();
+  },fail);
+}
+})();
+</script></body></html>
